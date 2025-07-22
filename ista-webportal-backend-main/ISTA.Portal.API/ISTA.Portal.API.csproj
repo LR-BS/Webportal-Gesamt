@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileContext>..\..</DockerfileContext>
+    <DockerComposeProjectPath>..\..\docker-compose.dcproj</DockerComposeProjectPath>
+    <UserSecretsId>dcb40af5-1717-494d-a82c-c1d98b68350b</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="8.0.7" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="5.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer" Version="5.1.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="8.0.7" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.21.0" />
+    <PackageReference Include="SharedKernel" Version="1.0.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+    <PackageReference Include="System.Linq.Dynamic.Core" Version="1.6.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+     <ProjectReference Include="..\..\SharedKernel\SharedKernel.csproj" />
+     <ProjectReference Include="..\ISTA.Portal.Application\ISTA.Portal.Application.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="ReleaseBuild\web.config" />
+    <_ContentIncludedByDefault Remove="ReleaseBuild\appsettings.Development.json" />
+    <_ContentIncludedByDefault Remove="ReleaseBuild\appsettings.json" />
+    <_ContentIncludedByDefault Remove="ReleaseBuild\ISTA.Portal.API.deps.json" />
+    <_ContentIncludedByDefault Remove="ReleaseBuild\ISTA.Portal.API.runtimeconfig.json" />
+  </ItemGroup>
+
+</Project>
